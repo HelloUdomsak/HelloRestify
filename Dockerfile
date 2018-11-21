@@ -1,4 +1,4 @@
-FROM keymetrics/pm2:{{tag}}
+FROM keymetrics/pm2
 
 # Bundle APP files
 COPY src src/
