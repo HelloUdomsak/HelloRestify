@@ -1,0 +1,13 @@
+version: '2'
+services:
+  helloworld:
+    image: helloworld
+    build: .
+    ports:
+      - 127.0.0.1:3000:3000
+    environment:
+      - MONGODB_USER=superman
+      - MONGO_PASSWORD=xxyy77kk
+      - MONGODB_HOST=127.0.0.1
+      - MONGODB_PORT=27017
+      - MONGODB_DATABASE=my_db
