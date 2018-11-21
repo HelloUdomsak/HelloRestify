@@ -2,7 +2,6 @@ FROM keymetrics/pm2
 
 # Bundle APP files
 COPY src src/
-COPY package.json .
 COPY pm2.json .
 
 # Install app dependencies
