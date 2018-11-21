@@ -30,12 +30,12 @@ const logger = require('pino')()
  server.listen(3000, () =>{
 
     mongoose.Promise = global.Promise
-    constructUri = 'mongodb://' + serverConfig.get('db:mongoUser') + ':' 
+    constructUri = 'mongodb://' + ( process.env.MONGODB_USER || serverConfig.get('db:mongoUser')) + ':' 
          + ( process.env.MONGO_PASSWORD || serverConfig.get('db:mongoPassWord')) 
          + '@'
-         + serverConfig.get('db:mongoHost') 
-         + ':' + serverConfig.get('db:mongoPort') 
-         + '/' + serverConfig.get('AppDB:core')
+         + ( process.env.MONGODB_HOST || serverConfig.get('db:mongoHost')) 
+         + ':' + ( process.env.MONGODB_PORT || serverConfig.get('db:mongoPort')) 
+         + '/' + ( process.env.MONGODB_DATABASE || serverConfig.get('AppDB:core'))
 
      mongoose.connect(constructUri, serverConfig.get('db:dbOptions'))
      const db = mongoose.connection
