@@ -90,3 +90,6 @@ override.tf.json
 
 Credential
 Credential/*
+
+#Ignore Terraform plan 
+PlanState/*
