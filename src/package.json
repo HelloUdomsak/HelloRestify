@@ -4,6 +4,7 @@
   "description": "HelloWorld Restify with Moongose ",
   "main": "api.js",
   "scripts": {
+    "start": "node api.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Udomsak Chundang",
