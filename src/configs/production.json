@@ -1,0 +1,15 @@
+{
+    "app": {
+        "ip" : "127.0.0.1",
+        "port": 3000
+    },
+    "db": {
+        "mongoHost": "localhost",
+        "mongoUser": "master",
+        "mongoPassWord": "",
+        "mongoPort": "27107"
+    },
+    "AppDB":{
+        "core": "ticket_reservation"
+    }
+}

@@ -1,0 +1,24 @@
+{
+  "name": "helloworld.restify",
+  "version": "1.0.0",
+  "description": "HelloWorld Restify with Moongose ",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Udomsak Chundang",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^5.9.0",
+    "jsdoc": "^3.5.5",
+    "mongoose": "^5.3.12",
+    "mongoose-string-query": "^0.2.5",
+    "mongoose-timestamp": "^0.6.0",
+    "nconf": "^0.10.0",
+    "pino": "^5.8.1",
+    "restify": "^7.2.3",
+    "restify-errors": "^6.1.1",
+    "restify-pino-logger": "^3.0.0",
+    "restify-plugins": "^1.6.0"
+  }
+}
