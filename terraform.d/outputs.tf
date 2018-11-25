@@ -1,9 +1,9 @@
-output "raddit_static_ip" {
-  value = "${google_compute_global_address.raddit_static_ip.address}"
+output "cluster_node1_static_ip" {
+  value = "${google_compute_global_address.cluster_node1_static_ip.address}"
 }
 
-output "gitlab_static_ip" {
-  value = "${google_compute_address.gitlab_static_ip.address}"
+output "cluster_node2_static_ip" {
+  value = "${google_compute_address.cluster_node2_static_ip.address}"
 }
 
 output "kubconfig" {

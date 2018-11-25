@@ -1,0 +1,36 @@
+---
+apiVersion: "extensions/v1beta1"
+kind: "Deployment"
+metadata:
+  name: "helloworld-app-1"
+  labels:
+    app: "helloworld-app-1"
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: "helloworld-app-1"
+  template:
+    metadata:
+      labels:
+        app: "helloworld-app-1"
+    spec:
+      containers:
+      - name: "helloworld-restify"
+        image: "udomsak/helloworld-restify"
+
+---
+apiVersion: "autoscaling/v1"
+kind: "HorizontalPodAutoscaler"
+metadata:
+  name: "helloworld-app-1-hpa"
+  labels:
+    app: "helloworld-app-1"
+spec:
+  scaleTargetRef:
+    kind: "Deployment"
+    name: "helloworld-app-1"
+    apiVersion: "apps/v1beta1"
+  minReplicas: 1
+  maxReplicas: 5
+  targetCPUUtilizationPercentage: 80

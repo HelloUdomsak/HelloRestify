@@ -1,0 +1,18 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: helloworld-api-ingress
+  annotations:
+    kubernetes.io/ingress.class: traefik
+    traefik.frontend.passHostHeader: "true"
+    traefik.frontend.priority: "1"
+    traefik.ingress.kubernetes.io/frontend-entry-points: http,https
+spec:
+  rules:
+  - host: helloworld.windofelement.co
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: helloworld-api-service
+          servicePort: 80

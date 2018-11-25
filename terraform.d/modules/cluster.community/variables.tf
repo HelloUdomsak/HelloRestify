@@ -21,6 +21,11 @@ variable "disable_autoscaling_addon" {
   default     = false
 }
 
+variable "disable_pod_horizontal_autoscaling_addon" {
+  description = "Enable Pod autoscaling "
+  default = false
+}
+
 variable "initial_node_count" {
   description = "The number of nodes to create in this cluster (not including the Kubernetes master)"
   default     = 1

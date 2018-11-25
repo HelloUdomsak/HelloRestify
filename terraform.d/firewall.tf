@@ -3,9 +3,9 @@
 
 module "fw_ssh" {
   source      = "./modules/firewall.community/ingress-allow"
-  name        = "allow-ssh"
-  description = "Allow SSH for everyone"
+  name        = "basic-web-configuration"
+  description = "Allow basic web application port "
   network     = "${module.my_network.name}"
   protocol    = "tcp"
-  ports       = ["22"]
+  ports       = ["22","80","443"] 
 }

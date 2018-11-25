@@ -12,6 +12,10 @@ resource "google_container_cluster" "primary" {
     http_load_balancing {
       disabled = "${var.disable_autoscaling_addon}"
     }
+
+    horizontal_pod_autoscaling {
+      disabled = "${var.disable_pod_horizontal_autoscaling_addon}"
+    }
   }
 
   network = "${var.network}"
