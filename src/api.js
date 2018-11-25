@@ -54,7 +54,7 @@ const logger = require('pino')()
          * Load Static with Restify servstatic
          */
         server.get('/*', restify.plugins.serveStatic({
-            directory: './static/hello',
+            directory: __dirname + '/static/hello',
             default: 'index.html'
         }));
 
