@@ -7,7 +7,19 @@ This project is Hobby Project intend to practise my programming skill. So this i
 * Vuejs ( embeded in HTML file.)
 * Restify ( Fast Nodejs REST framework )
 * Mongoose ( MongoDB Nodejs driver )
-* apiodc ( Nodejs Document API generator )
+* apidoc - Try to use apiary.io 
+
+## API document
+https://hellorestifyapi.docs.apiary.io/#hello
+
+### Apiary.io Testing 
+
+```
+npm install -g dredd
+```
+
+**NOTE**  Currently dredd install on Windows have problem so i does not create API unit test.
+  
 
 ## Running
 
