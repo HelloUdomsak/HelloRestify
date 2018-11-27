@@ -1,80 +1,60 @@
 FORMAT: 1A
 HOST: http://polls.apiblueprint.org/
 
-# HelloAPI
+# HelloRestify API
 
-Polls is a simple API allowing consumers to view polls and vote in them.
+Hello is a simple API allow posting message from client via REST.
 
-## Questions Collection [/questions]
+## Message Collection [/hello]
 
-### List All Questions [GET]
+### List All message object [GET]
 
 + Response 200 (application/json)
 
         [
-            {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 2048
-                    }, {
-                        "choice": "Python",
-                        "votes": 1024
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 512
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 256
-                    }
-                ]
-            }
+        {
+        "_id": "5bf54943b5253c154479afc0",
+        "message": "HelloWorld Message",
+        "updatedAt": "2018-11-21T12:02:11.808Z",
+        "createdAt": "2018-11-21T12:02:11.808Z",
+        "__v": 0
+        },
+        {
+        "_id": "5bf5494db5253c154479afc1",
+        "message": "HelloWorld Message",
+        "updatedAt": "2018-11-21T12:02:21.445Z",
+        "createdAt": "2018-11-21T12:02:21.445Z",
+        "__v": 0
+        }     
         ]
 
-### Create a New Question [POST]
+### Create a New Message [POST]
 
-You may create your own question using this action. It takes a JSON
-object containing a question and a collection of answers in the
-form of choices.
+Create message via POST method ( No authentication ). accept only ```application/json``` 
 
 + Request (application/json)
 
         {
-            "question": "Favourite programming language?",
-            "choices": [
-                "Swift",
-                "Python",
-                "Objective-C",
-                "Ruby"
-            ]
+            "message" : "Hello World"
         }
 
-+ Response 201 (application/json)
++ Response 200 (application/json)
 
     + Headers
-
-            Location: /questions/2
-
+    
+            Server: Hello API
+            Content-Length: 22
+            Access-Control-Allow-Origin: *
+            Access-Control-Allow-Headers: Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, Api-Version, Response-Time
+            Access-Control-Expose-Headers: Api-Version, Request-Id, Response-Time
+            Connection: Keep-Alive
+            Content-MD5: oYHnyT87MYDFXCtd5ucYnw==
+            Date: Tue, 27 Nov 2018 09:06:42 GMT
+            Request-Id: 2990e1ed-1e9d-4cf2-a11f-0c2c179e5794
+            Response-Time: NaN
+            
     + Body
 
             {
-                "question": "Favourite programming language?",
-                "published_at": "2015-08-05T08:40:51.620Z",
-                "choices": [
-                    {
-                        "choice": "Swift",
-                        "votes": 0
-                    }, {
-                        "choice": "Python",
-                        "votes": 0
-                    }, {
-                        "choice": "Objective-C",
-                        "votes": 0
-                    }, {
-                        "choice": "Ruby",
-                        "votes": 0
-                    }
-                ]
+                "message": "Got it",
             }
