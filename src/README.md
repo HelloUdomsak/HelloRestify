@@ -94,4 +94,25 @@ SET MONGODB_DATABASE=mydatabase
 - [ ] Unit testing.
 - [ ] Authentication.
 - [ ] Authorization.
-- [ ] Document API. 
+- [ ] Document API.
+
+# Design goal 
+However my code is simple.  My goal is   fast-throughput , simple and can easy run in container environment.    
+
+## Component 
+
+- Restify  is  nodejs REST API framework that minimal run in async and use in many of production site.  Can integrate with other function later via plugin ( authentication, etc. ). Restify them self just provide request and response and some basic function. 
+
+ - Mongoose is Mongodb ORM framework. this make me easy to control database schema and function connect database and it make code standard more than write my own function to dealing with database operation.  Mongoose also provide enough function.      
+
+## Code-Design 
+
+-  Can define config to apply via Environment variable, even if you want to run without  environment variable can do too that can be done via configuration file instead.  
+
+-  Use configuration file instead hard-code in application  source-code application that easy to maintain and well structure. 
+
+-  Split  API functional outside main-code then call integrate later ( "require"  ) . my point it easy to read the code than pack all in one ( monolith ). 
+
+-  Use mongodb connection as reuse connection ( define in global object scope ) , instead of  open connection at API function side. 
+
+-  Split each function work per folder and in each folder also contain database schema too. ( model file ).  intend to grouping function together in one place ( API Controller and Database model in same folder ) .          
