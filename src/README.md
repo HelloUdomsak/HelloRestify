@@ -97,7 +97,7 @@ SET MONGODB_DATABASE=mydatabase
 - [ ] Document API.
 
 # Design goal 
-However my code is simple.  My goal is   fast-throughput , simple and can easy run in container environment.    
+However my code is simple.  My goal is   fast-throughput , simple and compatible with container environment ( Kubernetes ).    
 
 ## Component 
 
